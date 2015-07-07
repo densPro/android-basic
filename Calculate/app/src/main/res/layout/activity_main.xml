@@ -8,29 +8,48 @@
     android:background="@android:color/black">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_weight="2"
-        android:weightSum="2"
+        android:weightSum="4"
         >
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:text="New Text"
-            android:id="@+id/textView2"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:text="0"
-            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/textViewOperator"
             android:layout_weight="1"
             android:textColor="#f3c0c2b7"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:gravity="right" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="3"
+            android:weightSum="2"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:id="@+id/textViewSecontOperating"
+                android:layout_weight="1"
+                android:textColor="#f3c0c2b7"
+                android:textSize="45dp"
+                android:gravity="right" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:id="@+id/textViewFirtsOperating"
+                android:layout_weight="1"
+                android:textColor="#f3c0c2b7"
+                android:textSize="45dp"
+                android:gravity="right" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -38,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:weightSum="4">
+        android:weightSum="5">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -54,7 +73,7 @@
                 android:layout_height="fill_parent"
                 android:id="@+id/btn_DEL"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="30dp"
                 android:background="#ffa4c639"
                 android:text="DEL"
                 android:typeface="monospace" />
@@ -66,7 +85,17 @@
                 android:id="@+id/btn_AC"
                 android:layout_weight="1"
                 android:background="#ffa4c639"
-                android:textSize="40dp"
+                android:textSize="30dp"
+                android:typeface="monospace" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="ANS"
+                android:id="@+id/btn_ans"
+                android:layout_weight="1"
+                android:background="#ffa4c639"
+                android:textSize="30dp"
                 android:typeface="monospace" />
 
             <Button
@@ -76,19 +105,10 @@
                 android:id="@+id/btn_divide"
                 android:layout_weight="1"
                 android:background="#ffa4c639"
-                android:textSize="40dp"
-                android:typeface="monospace" />
+                android:textSize="30dp"
+                android:typeface="monospace"
+                android:layout_marginLeft="5dp" />
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:text="x"
-                android:id="@+id/btn_multiply"
-                android:layout_weight="1"
-                android:background="#ffa4c639"
-                android:layout_marginLeft="5dp"
-                android:textSize="50dp"
-                android:typeface="monospace" />
         </LinearLayout>
 
         <LinearLayout
@@ -103,7 +123,7 @@
                 android:layout_height="fill_parent"
                 android:id="@+id/btn_7"
                 android:layout_weight="1"
-                android:textSize="50dp"
+                android:textSize="35dp"
                 android:background="#ffa4c639"
                 android:text="7"
                 android:typeface="monospace" />
@@ -115,7 +135,7 @@
                 android:id="@+id/btn_8"
                 android:layout_weight="1"
                 android:background="#ffa4c639"
-                android:textSize="50dp"
+                android:textSize="35dp"
                 android:typeface="monospace" />
 
             <Button
@@ -125,7 +145,7 @@
                 android:id="@+id/btn_9"
                 android:layout_weight="1"
                 android:background="#ffa4c639"
-                android:textSize="50dp"
+                android:textSize="35dp"
                 android:typeface="monospace" />
 
             <Button
@@ -136,7 +156,7 @@
                 android:layout_weight="1"
                 android:background="#ffa4c639"
                 android:layout_marginLeft="5dp"
-                android:textSize="50dp"
+                android:textSize="35dp"
                 android:typeface="monospace" />
 
 
@@ -155,7 +175,7 @@
                 android:text="4"
                 android:id="@+id/btn_4"
                 android:layout_weight="1"
-                android:textSize="50dp"
+                android:textSize="35dp"
                 android:background="#ffa4c639"
                 android:typeface="monospace" />
 
@@ -166,7 +186,7 @@
                 android:id="@+id/btn_5"
                 android:layout_weight="1"
                 android:background="#ffa4c639"
-                android:textSize="50dp"
+                android:textSize="35dp"
                 android:typeface="monospace" />
 
             <Button
@@ -176,7 +196,7 @@
                 android:id="@+id/btn_6"
                 android:layout_weight="1"
                 android:background="#ffa4c639"
-                android:textSize="50dp"
+                android:textSize="35dp"
                 android:typeface="monospace" />
 
             <Button
@@ -187,7 +207,7 @@
                 android:layout_weight="1"
                 android:background="#ffa4c639"
                 android:layout_marginLeft="5dp"
-                android:textSize="50dp"
+                android:textSize="35dp"
                 android:typeface="monospace"
                 android:elegantTextHeight="false" />
         </LinearLayout>
@@ -204,7 +224,7 @@
                 android:text="1"
                 android:id="@+id/btn_1"
                 android:layout_weight="1"
-                android:textSize="50dp"
+                android:textSize="35dp"
                 android:background="#ffa4c639"
                 android:typeface="monospace" />
 
@@ -215,7 +235,7 @@
                 android:id="@+id/btn_2"
                 android:layout_weight="1"
                 android:background="#ffa4c639"
-                android:textSize="50dp"
+                android:textSize="35dp"
                 android:typeface="monospace" />
 
             <Button
@@ -225,7 +245,55 @@
                 android:id="@+id/btn_3"
                 android:layout_weight="1"
                 android:background="#ffa4c639"
-                android:textSize="50dp"
+                android:textSize="35dp"
+                android:typeface="monospace" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="x"
+                android:id="@+id/btn_multiply"
+                android:layout_weight="1"
+                android:background="#ffa4c639"
+                android:layout_marginLeft="5dp"
+                android:textSize="35dp"
+                android:typeface="monospace" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:weightSum="4">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="00"
+                android:id="@+id/btn_00"
+                android:layout_weight="1"
+                android:textSize="35dp"
+                android:background="#ffa4c639"
+                android:typeface="monospace" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="0"
+                android:id="@+id/btn_0"
+                android:layout_weight="1"
+                android:background="#ffa4c639"
+                android:textSize="35dp"
+                android:typeface="monospace" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="."
+                android:id="@+id/btn_point"
+                android:layout_weight="1"
+                android:background="#ffa4c639"
+                android:textSize="35dp"
                 android:typeface="monospace" />
 
             <Button
@@ -236,11 +304,10 @@
                 android:layout_weight="1"
                 android:background="#ffa4c639"
                 android:layout_marginLeft="5dp"
-                android:textSize="50dp"
+                android:textSize="35dp"
                 android:typeface="monospace" />
 
         </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>
