@@ -13,8 +13,11 @@ public class MainActivity extends ActionBarActivity {
 
     private Button[] btnNumbers;
     private Button[] btnOperators;
-    private static final int BUTTON_NUMBERS_SIZE = 11;
+    private Button[] btnSetsOperators;
+    private static final int BUTTON_NUMBERS_SIZE = 12;
     private static final int BUTTON_OPERATORS_SIZE = 4;
+    private static final int BUTTON_SETS_OPERATORS = 3;
+
     private TextView textViewFirtsOperating;
     private TextView textViewSecontOperating;
     private TextView textViewOperator;
@@ -31,6 +34,10 @@ public class MainActivity extends ActionBarActivity {
             btn.setOnClickListener(new OperatorsListener(btnOperators, textViewFirtsOperating,textViewSecontOperating, textViewOperator));
         }
 
+        for(Button btn : btnSetsOperators){
+            btn.setOnClickListener(new SetsListener(btnSetsOperators,textViewFirtsOperating,textViewSecontOperating,textViewOperator));
+        }
+
         btn_equals.setOnClickListener(new EqualsListener(textViewFirtsOperating,textViewSecontOperating,textViewOperator));
     }
 
@@ -38,6 +45,7 @@ public class MainActivity extends ActionBarActivity {
         //number buttons
         btnNumbers = new Button[BUTTON_NUMBERS_SIZE];
         btnOperators = new Button[BUTTON_OPERATORS_SIZE];
+        btnSetsOperators = new Button[BUTTON_SETS_OPERATORS];
         btnNumbers[0] = (Button)findViewById(R.id.btn_0);
         btnNumbers[1] = (Button)findViewById(R.id.btn_1);
         btnNumbers[2] = (Button)findViewById(R.id.btn_2);
@@ -49,6 +57,9 @@ public class MainActivity extends ActionBarActivity {
         btnNumbers[8] = (Button)findViewById(R.id.btn_8);
         btnNumbers[9] = (Button)findViewById(R.id.btn_9);
         btnNumbers[10] = (Button)findViewById(R.id.btn_00);
+        btnNumbers[11] = (Button)findViewById(R.id.btn_point);
+
+        //operators buttons
         btnOperators[0] = (Button)findViewById(R.id.btn_plus);
         btnOperators[1] = (Button)findViewById(R.id.btn_rest);
         btnOperators[2] = (Button)findViewById(R.id.btn_multiply);
@@ -60,6 +71,11 @@ public class MainActivity extends ActionBarActivity {
 
         //equals button
         btn_equals = (Button)findViewById(R.id.btn_equals);
+
+        //sets buttons
+        btnSetsOperators[0] = (Button)findViewById(R.id.btn_DEL);
+        btnSetsOperators[1] = (Button)findViewById(R.id.btn_AC);
+        btnSetsOperators[2] = (Button)findViewById(R.id.btn_plus_rest);
     }
 
     @Override
