@@ -96,7 +96,7 @@
                     android:ems="10"
                     android:id="@+id/editTextExample"
                     android:layout_marginLeft="40dp"
-                    android:text="Example"
+                    android:text="Example@gmail.com"
                     android:singleLine="false" />
             </LinearLayout>
         </LinearLayout>
@@ -108,15 +108,15 @@
             android:weightSum="1">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="184dp"
                 android:layout_height="100dp"
                 android:text="Cancel"
-                android:id="@+id/button"
+                android:id="@+id/button1"
                 android:layout_marginTop="30dp"
                 android:layout_weight="1.06" />
 
             <Button
-                android:layout_width="202dp"
+                android:layout_width="184dp"
                 android:layout_height="100dp"
                 android:text="OK"
                 android:id="@+id/button2"
