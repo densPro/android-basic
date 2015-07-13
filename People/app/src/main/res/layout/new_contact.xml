@@ -9,7 +9,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="1">
 
         <LinearLayout
             android:orientation="vertical"
@@ -94,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:ems="10"
-                    android:id="@+id/editTextExample"
+                    android:id="@+id/editTextEmail"
                     android:layout_marginLeft="40dp"
                     android:text="Example@gmail.com"
                     android:singleLine="false" />
@@ -103,24 +104,29 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="1">
+            android:layout_width="fill_parent"
+            android:layout_height="74dp"
+            android:weightSum="2"
+            android:layout_marginTop="5dp"
+            android:layout_weight="7.40">
 
             <Button
-                android:layout_width="184dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
                 android:text="Cancel"
+                android:onClick="Cancel"
                 android:id="@+id/button1"
-                android:layout_marginTop="30dp"
-                android:layout_weight="1.06" />
+                android:layout_marginTop="0dp"
+                android:layout_weight="1" />
 
             <Button
-                android:layout_width="184dp"
-                android:layout_height="100dp"
-                android:text="OK"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="Save"
+                android:onClick="Save"
                 android:id="@+id/button2"
-                android:layout_marginTop="30dp" />
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
 
