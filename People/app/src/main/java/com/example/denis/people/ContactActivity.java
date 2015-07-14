@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.denis.people.db.ContactDBHelper;
 
@@ -79,7 +80,9 @@ public class ContactActivity extends ActionBarActivity {
         dataContact.put(ContactDBHelper.Columns.CONTACT_PHONE,phone);
         dataContact.put(ContactDBHelper.Columns.CONTACT_ADDRESS,address);
         dataContact.put(ContactDBHelper.Columns.CONTACT_EMAIL,email);
-        db.insert(ContactDBHelper.TABLE,null, dataContact );
+        db.insert(ContactDBHelper.TABLE, null, dataContact);
+        Toast.makeText(getApplicationContext(),
+                "contact added", Toast.LENGTH_LONG).show();
         db.close();
     }
     // buttons

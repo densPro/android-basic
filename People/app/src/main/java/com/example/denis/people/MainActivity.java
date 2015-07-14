@@ -108,8 +108,8 @@ public  class MainActivity extends ActionBarActivity  {
             String arg = l.getAdapter().getItem(position).toString();
             String[] args = new String[]{ arg};
             sqlDB.execSQL("DELETE FROM contacts WHERE name=?", args);
-           /// Toast.makeText(getApplicationContext(),
-             //       "Contacto eliminado con exito.!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity().getApplicationContext(),
+                    "contact eliminated", Toast.LENGTH_LONG).show();
             sqlDB.close();
             Intent i = new Intent(getActivity().getApplicationContext(),MainActivity.class);
             startActivity(i);
