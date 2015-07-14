@@ -2,6 +2,7 @@ package com.example.denis.people;
 
 import android.app.FragmentManager;
 import android.app.ListFragment;
+import android.content.ClipData;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,13 +16,15 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Switch;
+import android.widget.Toast;
 
 import com.example.denis.people.db.ContactDBHelper;
 
 import java.util.ArrayList;
 
 
-public  class MainActivity extends ActionBarActivity {
+public  class MainActivity extends ActionBarActivity  {
     private ListAdapter listAdapter;
 
     @Override
@@ -99,6 +102,17 @@ public  class MainActivity extends ActionBarActivity {
 
         @Override
         public void onListItemClick(ListView l, View v, int position, long id) {
+            super.onListItemClick(l, v, position, id);
+            ContactDBHelper dbh=new ContactDBHelper(this.getActivity());
+            SQLiteDatabase sqlDB = dbh.getWritableDatabase();
+            String arg = l.getAdapter().getItem(position).toString();
+            String[] args = new String[]{ arg};
+            sqlDB.execSQL("DELETE FROM contacts WHERE name=?", args);
+           /// Toast.makeText(getApplicationContext(),
+             //       "Contacto eliminado con exito.!", Toast.LENGTH_LONG).show();
+            sqlDB.close();
+            Intent i = new Intent(getActivity().getApplicationContext(),MainActivity.class);
+            startActivity(i);
 
         }
 
