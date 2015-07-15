@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:background="#ff566dff">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:text="Temp"
+        android:id="@+id/tempView"
+        android:layout_weight="5"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:text="Pressure"
+        android:id="@+id/pressureView"
+        android:layout_weight="2"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:text="Humidity"
+        android:id="@+id/humidityView"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:text="Temp_min"
+        android:id="@+id/temp_minView"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:text="Temp_max"
+        android:id="@+id/temp_maxView"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white" />
+</LinearLayout>
