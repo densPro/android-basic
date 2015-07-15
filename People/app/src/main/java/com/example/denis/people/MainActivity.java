@@ -6,13 +6,16 @@ import android.content.ClipData;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -90,7 +93,7 @@ public  class MainActivity extends ActionBarActivity  {
     }*/
 
 
-    public static class SimpleListFragment extends ListFragment
+    public static class SimpleListFragment extends ListFragment implements View.OnCreateContextMenuListener
     {
 
         ArrayList<String> Contacts=  new ArrayList<>();;
@@ -103,6 +106,54 @@ public  class MainActivity extends ActionBarActivity  {
         @Override
         public void onListItemClick(ListView l, View v, int position, long id) {
             super.onListItemClick(l, v, position, id);
+            eliminate(l, position);
+
+        }
+        @Override
+        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+
+            super.onCreateContextMenu(menu, v, menuInfo);
+
+            getActivity().getMenuInflater().inflate(R.menu.menu_contextual, menu);
+        }
+
+        /*
+         * Método invocado cuando se selecciona un elemento del menú contextual
+         * En el caso de las llamadas de teléfono se debería comprobar si se ha
+         * registrado algún número antes de lanzar la llamada en cada caso
+         */
+        @Override
+        public boolean onContextItemSelected(MenuItem item) {
+
+		/*
+		 *  Contiene información sobre el elemento del menú contextual
+		 *  sobre el que se ha pulsado
+		 */
+            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+            //Contacto contacto = null;
+            Intent llamadaTelefono = null;
+
+            ContactDBHelper dbh=new ContactDBHelper(this.getActivity());
+            SQLiteDatabase sqlDB = dbh.getWritableDatabase();
+           // String arg = l.getAdapter().getItem(info.position).toString();
+            switch (item.getItemId()) {
+                case R.id.ctx_llamar_movil:
+
+                    llamadaTelefono = new Intent(Intent.ACTION_CALL);
+                    //contacto = listaContactos.get(info.position);
+                    //llamadaTelefono.setData(Uri.parse("tel:" + contacto.getMovil()));
+                    startActivity(llamadaTelefono);
+                    return true;
+                case R.id.ctx_eliminar:
+
+                    //eliminarContacto(info);
+                    return true;
+                default:
+                    return super.onContextItemSelected(item);
+            }
+        }
+
+        private void eliminate(ListView l, int position) {
             ContactDBHelper dbh=new ContactDBHelper(this.getActivity());
             SQLiteDatabase sqlDB = dbh.getWritableDatabase();
             String arg = l.getAdapter().getItem(position).toString();
@@ -113,7 +164,6 @@ public  class MainActivity extends ActionBarActivity  {
             sqlDB.close();
             Intent i = new Intent(getActivity().getApplicationContext(),MainActivity.class);
             startActivity(i);
-
         }
 
         @Override
